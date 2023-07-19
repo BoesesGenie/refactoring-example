@@ -6,31 +6,31 @@ import presentation from './presentation';
 export default function main(asHtml = false) {
   let output = '';
   // @ts-ignore
-  const books = awesomeProducerData.concat(anotherProducerData);
+  const rawBooks = awesomeProducerData.concat(anotherProducerData);
 
-  for (let i = 0; i < books.length; i++) {
+  for (let i = 0; i < rawBooks.length; i++) {
     let dataType = 'another';
     let book;
 
-    if (books[i].price) {
+    if (rawBooks[i].price) {
       dataType = 'awesome';
     }
 
     switch (dataType) {
       case 'awesome':
         book = new Book(
-          books[i].name,
-          books[i].author,
-          books[i].price / 1000000
+          rawBooks[i].name,
+          rawBooks[i].author,
+          rawBooks[i].price / 1000000
         );
         break;
       case 'another':
         book = new Book(
           // @ts-ignore
-          books[i].title,
-          books[i].author,
+          rawBooks[i].title,
+          rawBooks[i].author,
           // @ts-ignore
-          books[i].amount - books[i].amount / 100 * books[i].discount
+          rawBooks[i].amount - rawBooks[i].amount / 100 * rawBooks[i].discount
         );
         break;
     }

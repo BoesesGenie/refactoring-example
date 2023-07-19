@@ -4,31 +4,31 @@ import anotherProducerData from './data/another_producer.json';
 export default function main(asHtml = false) {
   let output = '';
   // @ts-ignore
-  const arr = awesomeProducerData.concat(anotherProducerData);
+  const books = awesomeProducerData.concat(anotherProducerData);
 
-  for (let i = 0; i < arr.length; i++) {
+  for (let i = 0; i < books.length; i++) {
     let dataType = 'another';
     let data;
 
-    if (arr[i].price) {
+    if (books[i].price) {
       dataType = 'awesome';
     }
 
     switch (dataType) {
       case 'awesome':
         data = {
-          name: arr[i].name,
-          author: arr[i].author,
-          amount: arr[i].price / 1000000,
+          name: books[i].name,
+          author: books[i].author,
+          amount: books[i].price / 1000000,
         }
         break;
       case 'another':
         data = {
           // @ts-ignore
-          name: arr[i].title,
-          author: arr[i].author,
+          name: books[i].title,
+          author: books[i].author,
           // @ts-ignore
-          amount: arr[i].amount - arr[i].amount / 100 * arr[i].discount,
+          amount: books[i].amount - books[i].amount / 100 * books[i].discount,
         }
         break;
     }

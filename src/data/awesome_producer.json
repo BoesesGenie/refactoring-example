@@ -1,0 +1,19 @@
+[
+  {
+    "name": "Python Crash Course, 3rd Edition: A Hands-On, Project-Based Introduction to Programming",
+    "author": "Eric Matthes",
+    "price": 32000000
+  },
+
+  {
+    "name": "Code: The Hidden Language of Computer Hardware and Software",
+    "author": "Charles Petzold",
+    "price": 15000000
+  },
+
+  {
+    "name": "Learning Angular: A no-nonsense guide to building web applications with Angular 15, 4th Edition",
+    "author": "Aristeidis Bampakos and Pablo Deeleman",
+    "price": 10000000
+  }
+]

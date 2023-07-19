@@ -1,0 +1,22 @@
+[
+  {
+    "title": "JavaScript: The Definitive Guide: Master the World's Most-Used Programming Language",
+    "author": "David Flanagan",
+    "amount": 32,
+    "discount": 5
+  },
+
+  {
+    "title": "Eloquent JavaScript, 3rd Edition: A Modern Introduction to Programming",
+    "author": "Marijn Haverbeke",
+    "amount": 15,
+    "discount": 5
+  },
+
+  {
+    "title": "Head First JavaScript Programming: A Brain-Friendly Guide",
+    "author": "Eric Freeman and Elisabeth Robson",
+    "amount": 10,
+    "discount": 5
+  }
+]

@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "outDir": "build"
+  },
+  "include": ["src/**/*"],
+  "exclude": ["**/*.test.ts"]
+}

@@ -4,9 +4,9 @@ import Book from './models/Book';
 import presentation from './presentation';
 
 export default function main(asHtml = false) {
-  let output = '';
   // @ts-ignore
   const rawBooks = awesomeProducerData.concat(anotherProducerData);
+  const books: Book[] = [];
 
   for (let i = 0; i < rawBooks.length; i++) {
     let dataType = 'another';
@@ -35,8 +35,14 @@ export default function main(asHtml = false) {
         break;
     }
 
-    output += presentation(asHtml, book);
+    books.push(book);
   }
+
+  let output = '';
+
+  books.forEach((book) => {
+    output += presentation(asHtml, book);
+  });
 
   return output;
 }

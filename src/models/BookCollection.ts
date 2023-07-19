@@ -27,4 +27,17 @@ export default class BookCollection {
       return acc;
     }, '');
   };
+
+  asPlainText = () => {
+    return this.books.reduce((acc, book) => {
+      acc += `
+'''
+Author: ${book.author};
+Name: ${book.name};
+Amount: $${book.amount};
+'''
+`;
+      return acc;
+    }, '');
+  };
 }

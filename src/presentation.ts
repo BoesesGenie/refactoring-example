@@ -1,19 +1,21 @@
-export default function presentation(asHtml: boolean, data) {
+import Book from './models/Book';
+
+export default function presentation(asHtml: boolean, book: Book) {
   if (!asHtml) {
     return `
 '''
-Author: ${data.author};
-Name: ${data.name};
-Amount: $${data.amount};
+Author: ${book.author};
+Name: ${book.name};
+Amount: $${book.amount};
 '''
 `;
   }
 
   return `
 <div>
-<p>Author: ${data.author};</p>
-<p>Name: ${data.name};</p>
-<p>Amount: $${data.amount};</p>
+<p>Author: ${book.author};</p>
+<p>Name: ${book.name};</p>
+<p>Amount: $${book.amount};</p>
 </div>
 `;
 }

@@ -14,4 +14,17 @@ export default class BookCollection {
   concat = (collection: BookCollection) => {
     return new BookCollection(this.books.concat(collection.books));
   };
+
+  asHtml = () => {
+    return this.books.reduce((acc, book) => {
+      acc += `
+<div>
+<p>Author: ${book.author};</p>
+<p>Name: ${book.name};</p>
+<p>Amount: $${book.amount};</p>
+</div>
+`;
+      return acc;
+    }, '');
+  };
 }

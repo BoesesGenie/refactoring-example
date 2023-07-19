@@ -1,5 +1,6 @@
 import awesomeProducerData from './data/awesome_producer.json';
 import anotherProducerData from './data/another_producer.json';
+import Book from './models/Book';
 import presentation from './presentation';
 
 export default function main(asHtml = false) {
@@ -17,20 +18,20 @@ export default function main(asHtml = false) {
 
     switch (dataType) {
       case 'awesome':
-        data = {
-          name: books[i].name,
-          author: books[i].author,
-          amount: books[i].price / 1000000,
-        }
+        data = new Book(
+          books[i].name,
+          books[i].author,
+          books[i].price / 1000000
+        );
         break;
       case 'another':
-        data = {
+        data = new Book(
           // @ts-ignore
-          name: books[i].title,
-          author: books[i].author,
+          books[i].title,
+          books[i].author,
           // @ts-ignore
-          amount: books[i].amount - books[i].amount / 100 * books[i].discount,
-        }
+          books[i].amount - books[i].amount / 100 * books[i].discount
+        );
         break;
     }
 

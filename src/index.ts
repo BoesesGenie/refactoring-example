@@ -1,5 +1,6 @@
 import awesomeProducerData from './data/awesome_producer.json';
 import anotherProducerData from './data/another_producer.json';
+import presentation from './presentation';
 
 export default function main(asHtml = false) {
   let output = '';
@@ -33,23 +34,7 @@ export default function main(asHtml = false) {
         break;
     }
 
-    if (!asHtml) {
-        output += `
-'''
-Author: ${data.author};
-Name: ${data.name};
-Amount: $${data.amount};
-'''
-`;
-      continue;
-    }
-      output += `
-<div>
-<p>Author: ${data.author};</p>
-<p>Name: ${data.name};</p>
-<p>Amount: $${data.amount};</p>
-</div>
-`;
+    output += presentation(asHtml, data);
   }
 
   return output;

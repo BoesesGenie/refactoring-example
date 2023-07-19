@@ -10,7 +10,7 @@ export default function main(asHtml = false) {
 
   for (let i = 0; i < books.length; i++) {
     let dataType = 'another';
-    let data;
+    let book;
 
     if (books[i].price) {
       dataType = 'awesome';
@@ -18,14 +18,14 @@ export default function main(asHtml = false) {
 
     switch (dataType) {
       case 'awesome':
-        data = new Book(
+        book = new Book(
           books[i].name,
           books[i].author,
           books[i].price / 1000000
         );
         break;
       case 'another':
-        data = new Book(
+        book = new Book(
           // @ts-ignore
           books[i].title,
           books[i].author,
@@ -35,7 +35,7 @@ export default function main(asHtml = false) {
         break;
     }
 
-    output += presentation(asHtml, data);
+    output += presentation(asHtml, book);
   }
 
   return output;
